@@ -1,0 +1,53 @@
+{
+  "job": {
+    "title": "HR Manager",
+    "arabic_title": "مدير الموارد البشرية",
+    "company": {
+      "name": "Talenta Partners Group",
+      "description": "Specializes in recruitment through direct search and HR consultants. Supports clients in acquiring top-level talent and matching candidates to professional projects."
+    },
+    "summary": "Recruiting an HR Manager for one of our client companies.",
+    "responsibilities": [
+      "Ensure administrative organization of employees across the full employee lifecycle (hiring, contracts, amendments, departures, etc.)",
+      "Ensure administrative files comply with legal/regulatory requirements",
+      "Monitor workforce KPIs and productivity indicators",
+      "Master payroll management processes, coordinating with relevant stakeholders",
+      "Control variable payroll elements",
+      "Monitor time tracking, absences, leave, and overtime",
+      "Ensure the reliability of workforce and payroll data",
+      "Participate in recruitment campaigns",
+      "Write and distribute job postings",
+      "Manage sourcing, screening, and interview coordination for open roles",
+      "Contribute to onboarding of new employees",
+      "Participate in training-needs engineering",
+      "Identify training needs in coordination with department managers",
+      "Develop the training plan and follow up on its execution",
+      "Ensure monitoring and evaluation of training procedures"
+    ],
+    "requirements": {
+      "education": "Bachelor's degree or higher in Human Resources / Management",
+      "experience_min_years": 5,
+      "experience_type": "Proven experience in a general (generalist) HR role"
+    },
+    "structured_fields": {
+      "min_years_experience": 5,
+      "required_degree_fields": [
+        "human resources",
+        "business administration",
+        "management"
+      ],
+      "core_skill_areas": [
+        "employee lifecycle administration",
+        "labor law / legal compliance",
+        "payroll management",
+        "variable payroll elements",
+        "time & attendance tracking",
+        "workforce & payroll data reliability / KPI reporting",
+        "recruitment & sourcing",
+        "onboarding",
+        "training needs analysis",
+        "training plan development & evaluation"
+      ]
+    }
+  }
+}
