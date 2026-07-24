@@ -11,7 +11,7 @@ def run_constrained_cv_agent(cv_text: str) -> str:
     while step_count < MAX_STEPS:
         step_count += 1
 
-        llm_response = Gemini(prompt=history, require_json=True)
+        llm_response = Gemini  (prompt=history, require_json=True)
 
         try:
             step_data = AgentStep.model_validate_json(llm_response)
