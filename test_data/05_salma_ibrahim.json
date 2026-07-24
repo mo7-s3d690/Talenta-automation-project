@@ -1,0 +1,43 @@
+{
+  "id": "cand_05",
+  "name": "Salma Ibrahim",
+  "email": "salma.ibrahim@email.com",
+  "location": "Mansoura, Egypt",
+  "education": [
+    {
+      "degree": "BA in Psychology",
+      "institution": "Mansoura University",
+      "year": 2015
+    }
+  ],
+  "experience_years": 7.0,
+  "skills": [
+    "HR Management",
+    "Employee Lifecycle Administration",
+    "Legal Compliance",
+    "Payroll Management",
+    "Attendance & Overtime Tracking",
+    "Recruitment Pipeline",
+    "Onboarding",
+    "Training Plan Development",
+    "Workforce KPIs"
+  ],
+  "experience": [
+    {
+      "title": "HR Manager",
+      "company": "Coastal Logistics",
+      "period": "2018 - Present",
+      "duration_years": 7.0,
+      "responsibilities": [
+        "Full ownership of employee lifecycle administration for a 300-person workforce",
+        "Ensure legal compliance across all personnel files",
+        "Manage payroll cycles and variable compensation elements",
+        "Oversee attendance, leave, and overtime tracking",
+        "Lead recruitment campaigns and manage full hiring pipeline",
+        "Run onboarding for all new employees",
+        "Identify training needs with department heads and develop annual training plan",
+        "Report workforce KPIs monthly"
+      ]
+    }
+  ]
+}

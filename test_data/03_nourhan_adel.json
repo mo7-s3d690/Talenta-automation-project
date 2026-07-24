@@ -1,0 +1,43 @@
+{
+  "id": "cand_03",
+  "name": "Nourhan Adel",
+  "email": "nourhan.adel@email.com",
+  "location": "Giza, Egypt",
+  "education": [
+    {
+      "degree": "BA in Human Resources Management",
+      "institution": "Ain Shams University",
+      "year": 2018
+    }
+  ],
+  "experience_years": 6.0,
+  "skills": [
+    "People Operations",
+    "Labor Regulations Audit-Readiness",
+    "Compensation & Benefits",
+    "Payroll Cycles",
+    "HRIS Data Integrity",
+    "Talent Acquisition Strategy",
+    "Onboarding Programs",
+    "L&D Curriculum Design"
+  ],
+  "experience": [
+    {
+      "title": "People Operations Lead",
+      "company": "Fintech Horizon",
+      "period": "2019 - Present",
+      "duration_years": 6.0,
+      "responsibilities": [
+        "Own end-to-end employee journey from offer letter through exit interview for a 150-person org",
+        "Partner with legal counsel to keep personnel files audit-ready under current labor regulations",
+        "Run monthly compensation & benefits cycles, including variable pay components, alongside finance",
+        "Maintain time-and-attendance system and reconcile leave/overtime discrepancies each pay period",
+        "Own data integrity across the HRIS for headcount and compensation records",
+        "Drive talent acquisition strategy: define hiring plans, publish openings, and manage candidate pipeline",
+        "Design and deliver new-hire integration programs",
+        "Partner with department leads to build annual learning & development curriculum",
+        "Track L&D program outcomes and report on completion and impact"
+      ]
+    }
+  ]
+}

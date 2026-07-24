@@ -1,0 +1,40 @@
+{
+  "id": "cand_04",
+  "name": "Youssef Kamel",
+  "email": "youssef.kamel@email.com",
+  "location": "Cairo, Egypt",
+  "education": [
+    {
+      "degree": "BA in Business Administration",
+      "institution": "Helwan University",
+      "year": 2021
+    }
+  ],
+  "experience_years": 3.0,
+  "skills": [
+    "Employee Lifecycle Documentation",
+    "Labor Law Compliance",
+    "Payroll Processing",
+    "Attendance Tracking",
+    "Recruitment Campaigns",
+    "Onboarding",
+    "Training Needs Identification"
+  ],
+  "experience": [
+    {
+      "title": "HR Generalist",
+      "company": "Beshay Textiles",
+      "period": "2022 - Present",
+      "duration_years": 3.0,
+      "responsibilities": [
+        "Manage full employee lifecycle documentation: hiring, contracts, amendments, exits for 90-person workforce",
+        "Ensure administrative compliance with labor law",
+        "Process payroll, including variable elements, each month",
+        "Track attendance, leave, and overtime",
+        "Run recruitment campaigns end-to-end: postings, screening, interviews",
+        "Onboard new hires",
+        "Coordinate training-needs identification with line managers and maintain training calendar"
+      ]
+    }
+  ]
+}

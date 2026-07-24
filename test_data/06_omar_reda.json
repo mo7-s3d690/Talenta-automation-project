@@ -1,0 +1,35 @@
+{
+  "id": "cand_06",
+  "name": "Omar Reda",
+  "email": "omar.reda@email.com",
+  "location": "Alexandria, Egypt",
+  "education": [
+    {
+      "degree": "Bachelor's Degree",
+      "institution": "Ain Shams University",
+      "year": null
+    }
+  ],
+  "experience_years": 7.0,
+  "skills": [
+    "HR Administration",
+    "Recruitment",
+    "Payroll",
+    "Onboarding",
+    "Training Coordination"
+  ],
+  "experience": [
+    {
+      "title": "HR Department (Various Roles)",
+      "company": "Unspecified",
+      "period": "2018 - Present",
+      "duration_years": 7.0,
+      "responsibilities": [
+        "Handled HR duties across recruitment, admin, and payroll",
+        "Worked closely with management on personnel matters",
+        "Involved in onboarding and training coordination at times"
+      ]
+    }
+  ],
+  "notes": "No employer names given, no clear role titles, no dates between positions, no team size or scope specified."
+}

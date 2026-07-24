@@ -1,0 +1,54 @@
+{
+  "id": "cand_01",
+  "name": "Mariam El-Sayed",
+  "email": "mariam.elsayed@email.com",
+  "location": "Cairo, Egypt",
+  "education": [
+    {
+      "degree": "BA in Business Administration, HR Concentration",
+      "institution": "Cairo University",
+      "year": 2016
+    }
+  ],
+  "experience_years": 9.0,
+  "skills": [
+    "Employee Lifecycle Management",
+    "Egyptian Labor Law",
+    "Social Insurance Compliance",
+    "Payroll Processing",
+    "HRIS",
+    "Attendance & Overtime Tracking",
+    "Recruitment Campaigns",
+    "Onboarding",
+    "Training Needs Assessment",
+    "Workforce KPIs"
+  ],
+  "experience": [
+    {
+      "title": "HR Manager",
+      "company": "Delta Industries",
+      "period": "2019 - Present",
+      "duration_years": 6.0,
+      "responsibilities": [
+        "Manage complete employee lifecycle: hiring, contracts, amendments, and offboarding for 220 employees",
+        "Ensure administrative files comply with Egyptian labor law and social insurance regulations",
+        "Process monthly payroll including variable elements (bonuses, overtime, allowances) with finance",
+        "Track attendance, leave balances, and overtime through company HRIS",
+        "Lead quarterly recruitment campaigns: post job openings, screen applicants, coordinate interviews",
+        "Coordinate onboarding for all new hires including documentation and first-week orientation",
+        "Conduct annual training-needs assessments with department heads and build yearly training plan",
+        "Monitor and evaluate training completion rates and effectiveness",
+        "Report monthly workforce KPIs (headcount, turnover, absenteeism) to senior management"
+      ]
+    },
+    {
+      "title": "HR Generalist",
+      "company": "Nile Retail Group",
+      "period": "2016 - 2019",
+      "duration_years": 3.0,
+      "responsibilities": [
+        "Supported recruitment, onboarding, and payroll administration"
+      ]
+    }
+  ]
+}
