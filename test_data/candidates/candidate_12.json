@@ -1,0 +1,23 @@
+{
+  "id": "candidate_12",
+  "name": "Michael Thompson",
+  "experience_years": 2,
+  "education": [
+    {
+      "degree": "Information Technology"
+    }
+  ],
+  "skills": [
+    "JavaScript",
+    "React"
+  ],
+  "experience": [
+    {
+      "title": "Junior Developer",
+      "responsibilities": [
+        "Frontend development"
+      ]
+    }
+  ],
+  "applied_job": "job_fullstack_dev"
+}

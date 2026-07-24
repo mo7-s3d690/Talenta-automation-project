@@ -1,0 +1,18 @@
+{
+  "id": "job_fullstack_dev",
+  "title": "Fullstack Developer",
+  "min_years_experience": 3,
+  "required_degree_fields": [
+    "Computer Science",
+    "Software Engineering",
+    "Information Technology"
+  ],
+  "core_skill_areas": [
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Python",
+    "SQL",
+    "API design"
+  ]
+}

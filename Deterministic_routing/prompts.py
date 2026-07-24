@@ -6,7 +6,7 @@ You will receive:
 2. Job Requirements
 3. Candidate Application history 
 
-Your task is ONLY to classify the cadidate into ONE category. 
+Your task is ONLY to classify the candidate into ONE category. 
 
 Return ONLY one of these labels:
 
@@ -17,10 +17,10 @@ IDLE
 Decision rules:
 
 ACCEPT:
-The candidate clearly matches the job requirments. 
+The candidate clearly matches the job requirements. 
 
 REJECT: 
-The candidate cleary does not match 
+The candidate clearly does not match 
 
 IDLE: 
 The case is ambiguous and requires a human recruiter. 

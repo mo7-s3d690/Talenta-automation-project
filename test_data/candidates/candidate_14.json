@@ -1,0 +1,23 @@
+{
+  "id": "candidate_14",
+  "name": "Daniel Brooks",
+  "experience_years": 3,
+  "education": [
+    {
+      "degree": "Accounting"
+    }
+  ],
+  "skills": [
+    "financial reporting",
+    "budgeting"
+  ],
+  "experience": [
+    {
+      "title": "Financial Analyst",
+      "responsibilities": [
+        "Supported budgeting process"
+      ]
+    }
+  ],
+  "applied_job": "job_finance_manager"
+}

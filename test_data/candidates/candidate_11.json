@@ -1,0 +1,28 @@
+{
+  "id": "candidate_11",
+  "name": "Emily Rodriguez",
+  "experience_years": 5,
+  "education": [
+    {
+      "degree": "Computer Science"
+    }
+  ],
+  "skills": [
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Python",
+    "SQL",
+    "API design"
+  ],
+  "experience": [
+    {
+      "title": "Fullstack Developer",
+      "responsibilities": [
+        "Built web applications",
+        "Designed APIs"
+      ]
+    }
+  ],
+  "applied_job": "job_fullstack_dev"
+}

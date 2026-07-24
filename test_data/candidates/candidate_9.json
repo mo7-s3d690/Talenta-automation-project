@@ -1,0 +1,27 @@
+{
+  "id": "candidate_9",
+  "name": "Sarah Mitchell",
+  "experience_years": 7,
+  "education": [
+    {
+      "degree": "Human Resources"
+    }
+  ],
+  "skills": [
+    "employee lifecycle",
+    "labor law",
+    "payroll",
+    "recruitment",
+    "onboarding"
+  ],
+  "experience": [
+    {
+      "title": "HR Manager",
+      "responsibilities": [
+        "Led HR team",
+        "Managed full employee lifecycle"
+      ]
+    }
+  ],
+  "applied_job": "job_hr_manager"
+}

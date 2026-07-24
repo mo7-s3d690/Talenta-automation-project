@@ -1,0 +1,27 @@
+{
+  "id": "candidate_13",
+  "name": "Olivia Bennett",
+  "experience_years": 8,
+  "education": [
+    {
+      "degree": "Finance"
+    }
+  ],
+  "skills": [
+    "financial reporting",
+    "budgeting",
+    "forecasting",
+    "cost control",
+    "IFRS"
+  ],
+  "experience": [
+    {
+      "title": "Finance Manager",
+      "responsibilities": [
+        "Managed budgets",
+        "Prepared financial reports"
+      ]
+    }
+  ],
+  "applied_job": "job_finance_manager"
+}

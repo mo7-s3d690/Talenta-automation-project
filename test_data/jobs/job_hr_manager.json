@@ -1,0 +1,17 @@
+{
+  "id": "job_hr_manager",
+  "title": "HR Manager",
+  "min_years_experience": 5,
+  "required_degree_fields": [
+    "Human Resources",
+    "Business Administration",
+    "Management"
+  ],
+  "core_skill_areas": [
+    "employee lifecycle",
+    "labor law",
+    "payroll",
+    "recruitment",
+    "onboarding"
+  ]
+}

@@ -1,0 +1,4 @@
+google>=0.8.0
+pydantic>=2.6
+tenacity>=8.2
+python-dotenv>=1.0

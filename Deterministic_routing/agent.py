@@ -25,7 +25,7 @@ def main():
         candidate_path = os.path.join(CANDIDATES_FOLDER, filename)
         candidate = load_json(candidate_path)
     # Match history file using candidate id 
-        history_path = os.path.join(HISTORY_FOLDER, f"history_{candidate[id]}.json")
+        history_path = os.path.join(HISTORY_FOLDER, f"history_{candidate['id']}.json")
         if os.path.exists(history_path):
             history = load_json(history_path)
         else: 
@@ -41,7 +41,7 @@ def main():
             execute_action(decision)
             
             print("="*60)
-    if __name__ =="__main__":
+    if __name__ == "__main__":
         main()
         
         

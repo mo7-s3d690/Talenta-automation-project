@@ -3,11 +3,11 @@
   "already_in_pipeline_elsewhere": false,
   "previous_applications": [
     {
-      "role": "HR Manager",
+      "role": "Finance Officer",
       "status": "Rejected",
       "year": 2023,
-      "reason": "Cultural fit"
+      "reason": "Lack of management experience"
     }
   ],
-  "notes": "Previous rejection"
+  "notes": "Previous rejection for senior role"
 }

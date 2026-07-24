@@ -1,0 +1,17 @@
+{
+  "id": "job_finance_manager",
+  "title": "Finance Manager",
+  "min_years_experience": 6,
+  "required_degree_fields": [
+    "Finance",
+    "Accounting",
+    "Business Administration"
+  ],
+  "core_skill_areas": [
+    "financial reporting",
+    "budgeting",
+    "forecasting",
+    "cost control",
+    "IFRS"
+  ]
+}

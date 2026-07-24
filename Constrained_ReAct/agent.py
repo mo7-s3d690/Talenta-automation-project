@@ -1,86 +1,157 @@
+
+#run -> python agent.py
+import time
+import json
+import sys
 import os
-from dotenv import load_dotenv
 from google import genai
-from google.genai import types
 from pydantic import ValidationError
-from config import MAX_STEPS, ALLOWED_TOOLS, ALLOWED_DECISIONS
-from schema import AgentStep
-import tools
+from tenacity import retry, stop_after_attempt, wait_fixed, retry_if_exception_type
 
-# Load environment variables from .env file
-load_dotenv()
+from config import client, MODEL_NAME, MAX_STEPS, MAX_VALIDATION_RETRIES, ALLOWED_TOOLS
+from schema import ToolCall, FinalAnswer, Escalation, StepValidationError
+from tools import TOOL_REGISTRY, _load_candidate
 
-# Initialize Gemini Client
-client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+SYSTEM_PROMPT = """You are a strict JSON-only CV screening agent for Talenta Partners.
 
-def call_gemini(prompt: str) -> str:
-    """Calls Gemini API with Structured Output enforcement matching AgentStep schema."""
+**Rules:**
+- ALWAYS respond with valid JSON only. No extra text.
+- First step: Call a tool (do not guess).
+- Available tools: check_qualifications, check_skill_coverage, check_application_history
+
+**Valid JSON formats:**
+
+1. Tool Call:
+{
+  "thought": "I need to check the candidate's experience",
+  "action": "check_qualifications",
+  "action_input": {"candidate_id": "candidate_1"}
+}
+
+2. Final Decision:
+{
+  "decision": "ACCEPT",
+  "reasoning": "Strong match in experience and skills",
+  "evidence": ["5+ years HR", "Relevant degree"]
+}
+
+3. Escalate:
+{
+  "reason": "Ambiguous case with conflicting history",
+  "recommended_human_action": "Manual review by senior recruiter"
+}"""
+
+
+def _parse_step(text: str):
+    cleaned = text.strip().removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+    try:
+        obj = json.loads(cleaned)
+    except json.JSONDecodeError as e:
+        raise StepValidationError(f"Invalid JSON: {e}")
+
+    if "decision" in obj:
+        return FinalAnswer(**obj)
+    if "reason" in obj:
+        return Escalation(**obj)
+    return ToolCall(**obj)
+
+
+@retry(stop=stop_after_attempt(MAX_VALIDATION_RETRIES), wait=wait_fixed(2), reraise=True)
+def _get_validated_step(history_text: str):
     response = client.models.generate_content(
-        model="gemini-2.0-flash",  # <--- Updated model name here
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_schema=AgentStep,
-            temperature=0.1,
-        ),
+        model=MODEL_NAME,
+        contents=[{"role": "user", "parts": [{"text": history_text}]}],
+        config={
+            "system_instruction": SYSTEM_PROMPT,
+            "temperature": 0.1,
+            "max_output_tokens": 800
+        }
     )
-    return response.text
+    return _parse_step(response.text)
 
 
-def run_constrained_cv_agent(cv_text: str) -> str:
-    step_count = 0
-    history = (
-        "System: You are an HR automation agent. Your goal is to evaluate candidate CVs. "
-        "You can call standard tools or conclude with 'final_answer' set to 'ACCEPT', 'REJECT', or 'IDLE'.\n"
-        f"Context / Candidate CV: {cv_text}\n"
-    )
+def run(candidate_id: str):
+    candidate = _load_candidate(candidate_id)
+    transcript = [f"Evaluating candidate: {candidate_id} - {candidate.get('name', 'N/A')}"]
+    calls_made = 0
 
-    while step_count < MAX_STEPS:
-        step_count += 1
+    for step_num in range(1, MAX_STEPS + 1):
+        history_text = "\n".join(transcript) + "\n\nYour next response (JSON only):"
 
-        # 1. Call Gemini LLM with Structured Schema Output
-        llm_response = call_gemini(history)
-
-        # 2. Schema Validation
         try:
-            step_data = AgentStep.model_validate_json(llm_response)
-        except ValidationError as e:
-            history += f"\nObservation: Invalid schema. Error: {e}. Fix your formatting.\n"
-            continue
+            step = _get_validated_step(history_text)
+        except Exception as e:
+            print(f"❌ Validation Error for {candidate_id}: {e}")
+            return {"candidate_id": candidate_id, "status": "error", "reason": str(e)}
 
-        history += f"\nThought: {step_data.thought}\nAction: {step_data.action}\nInput: {step_data.action_input}\n"
+        calls_made += 1
 
-        # 3. Check for Final Answer or Escalation
-        if step_data.action == "final_answer":
-            if step_data.action_input in ALLOWED_DECISIONS:
-                return f"Final Decision: {step_data.action_input}"
-            else:
-                history += f"\nObservation: Invalid final decision '{step_data.action_input}'. Must be one of {ALLOWED_DECISIONS}.\n"
-                continue
+        if isinstance(step, (FinalAnswer, Escalation)):
+            result = {
+                "candidate_id": candidate_id,
+                "name": candidate.get("name"),
+                "result": step.model_dump(),
+                "llm_calls": calls_made,
+                "steps_used": step_num
+            }
+            print(json.dumps(result, indent=2, ensure_ascii=False))
+            print("-" * 60)
+            return result
 
-        if step_data.action == "escalate":
-            return "Final Decision: ESCALATED TO HUMAN (Edge case detected)"
+        # Execute tool
+        if step.action in TOOL_REGISTRY:
+            try:
+                result = TOOL_REGISTRY[step.action](**step.action_input)
+                transcript.append(f"Thought: {step.thought}")
+                transcript.append(f"Action: {step.action}")
+                transcript.append(f"Observation: {json.dumps(result, ensure_ascii=False)}")
+            except Exception as e:
+                transcript.append(f"Tool Error: {str(e)}")
 
-        # 4. Tool Execution & Constraint Enforcement
-        if step_data.action not in ALLOWED_TOOLS:
-            history += f"\nObservation: Tool '{step_data.action}' is not in allow-list {ALLOWED_TOOLS}.\n"
-            continue
-
-        if step_data.action == "extract_work_history":
-            observation = tools.extract_work_history(step_data.action_input)
-        elif step_data.action == "check_required_skills":
-            observation = tools.check_required_skills(step_data.action_input)
-        elif step_data.action == "evaluate_portfolio":
-            observation = tools.evaluate_portfolio(step_data.action_input)
-
-        history += f"Observation: {observation}\n"
-
-    # 5. Enforce Budget / Escalation
-    return "Final Decision: ESCALATED TO HUMAN (Exceeded MAX_STEPS budget)"
+    print(f"⚠️ MAX_STEPS reached for {candidate_id}")
+    return {"candidate_id": candidate_id, "status": "escalated", "reason": "Max steps reached"}
 
 
-# Example Execution:
+def get_all_candidate_ids():
+    """Get all candidate IDs from the candidates folder"""
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    candidates_dir = os.path.join(base_dir, "test_data", "candidates")
+
+    ids = []
+    for fname in sorted(os.listdir(candidates_dir)):
+        if fname.endswith(".json"):
+            # candidate_1.json → candidate_1
+            cid = fname.replace(".json", "")
+            ids.append(cid)
+    return ids
+
+
 if __name__ == "__main__":
-    sample_cv = "Candidate: Mariam Elsayed. 4 years Software Engineer. Experience in Python, Django, React. Portfolio: github.com/mariam"
-    result = run_constrained_cv_agent(sample_cv)
-    print(result)
+    if len(sys.argv) < 2:
+        print("🔄 Processing ALL candidates...\n")
+        all_ids = get_all_candidate_ids()
+        print(f"Found {len(all_ids)} candidates: {all_ids}\n")
+
+        results = []
+        for cid in all_ids:
+            print(f"\n{'=' * 60}")
+            print(f"Processing: {cid}")
+            print('=' * 60)
+            res = run(cid)
+            results.append(res)
+            time.sleep(15)
+
+        # Summary
+        print("\n\n📊 ========== FINAL SUMMARY ==========")
+        for r in results:
+            decision = r.get("result", {}).get("decision", r.get("status", "UNKNOWN"))
+            name = r.get("name", r.get("candidate_id"))
+            print(f"{r.get('candidate_id'):15} | {name:20} | {decision}")
+
+        # Save results
+        with open("all_results.json", "w", encoding="utf-8") as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+        print(f"\n✅ Results saved to all_results.json")
+
+    else:
+        run(sys.argv[1])

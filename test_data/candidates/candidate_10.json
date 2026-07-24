@@ -1,0 +1,23 @@
+{
+  "id": "candidate_10",
+  "name": "James Carter",
+  "experience_years": 4,
+  "education": [
+    {
+      "degree": "Business Administration"
+    }
+  ],
+  "skills": [
+    "recruitment",
+    "onboarding"
+  ],
+  "experience": [
+    {
+      "title": "HR Specialist",
+      "responsibilities": [
+        "Handled recruitment"
+      ]
+    }
+  ],
+  "applied_job": "job_hr_manager"
+}

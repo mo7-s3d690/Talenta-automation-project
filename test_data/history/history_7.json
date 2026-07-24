@@ -1,0 +1,13 @@
+{
+  "previously_rejected_for_similar_role": true,
+  "already_in_pipeline_elsewhere": false,
+  "previous_applications": [
+    {
+      "role": "HR Coordinator",
+      "status": "Rejected",
+      "year": 2024,
+      "reason": "Salary expectations"
+    }
+  ],
+  "notes": "Rejected due to salary"
+}
