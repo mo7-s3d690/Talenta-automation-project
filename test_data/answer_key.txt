@@ -1,0 +1,58 @@
+ANSWER KEY — expected decision for each CV against job_description.txt
+(HR Manager, Talenta Partners Group)
+
+Use this to score all four architectures on the same footing. Where the
+answer is marked "your call," argue for it in the presentation — the
+disagreement is the interesting part.
+
+cv_01_strong_match.txt
+  Expected: ACCEPT
+  Why: 6 years generalist HR experience, matching degree, directly
+  covers every JD responsibility.
+  Tests: sanity check — every architecture should get this right.
+
+cv_02_clear_reject.txt
+  Expected: REJECT
+  Why: unrelated field, zero HR experience.
+  Tests: sanity check — every architecture should get this right.
+
+cv_03_paraphrased_skills.txt
+  Expected: ACCEPT
+  Why: meets years and degree, covers every JD responsibility — just
+  described in different vocabulary ("people operations" vs. "HR",
+  "compensation & benefits" vs. "payroll management").
+  Tests: reactive keyword-matching brittleness. This is the CV most
+  likely to be misclassified by a rigid rule set.
+
+cv_04_experience_below_threshold.txt
+  Expected: IDLE
+  Why: full scope match, but only 3 of the required 5 years.
+  Tests: threshold judgment — should a strong 3-year profile still get
+  a look?
+
+cv_05_wrong_degree_field.txt
+  Expected: IDLE
+  Why: 7 years, full scope match, but a Psychology degree instead of
+  HR/Management.
+  Tests: trade-off between a hard requirement and strong experience.
+
+cv_06_ambiguous_incomplete.txt
+  Expected: IDLE
+  Why: missing dates, missing major, vague bullets with no verifiable
+  scope.
+  Tests: genuinely insufficient information — can't be scored as-is.
+
+cv_07_borderline_partial_scope.txt
+  Expected: IDLE
+  Why: years met, real HR experience, but only in recruitment and
+  onboarding — no payroll, compliance, or training experience the JD
+  explicitly requires.
+  Tests: specialist-vs-generalist scope mismatch.
+
+cv_08_keyword_stuffed.txt
+  Expected: your call (REJECT or IDLE — defend it)
+  Why: nearly every JD bullet is echoed almost verbatim, but under a
+  year of real, verifiable experience.
+  Tests: whether an architecture over-trusts surface keyword overlap
+  without checking substance. Good one to run through all four and
+  compare who falls for it.
