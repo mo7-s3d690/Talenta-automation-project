@@ -1,5 +1,5 @@
-def execute_action(decision):
-    decision = decision.strip().upper()
+def execute_action(decision, candidate):
+    print(f"\nCandidate:{candidate.get('name')}")
     if decision == "ACCEPT":
         print ("Candidate Accepted")
         print("Action: Schedule Interview")
