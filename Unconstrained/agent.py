@@ -77,10 +77,11 @@ IDLE
 
     start = time.time()
     response = llm.invoke(prompt)
+    end = time.time()
     print(response.response_metadata)
 
     return response.content
-    end = time.time()
+    
 
     print(
         "Latency:",
