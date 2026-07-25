@@ -1,35 +1,35 @@
 import json
+import os
 
 
-def load_json(file_path):
-    """Load JSON file."""
-    with open(file_path, "r", encoding="utf-8") as file:
+
+def load_json(path):
+
+    with open(
+        path,
+        "r",
+        encoding="utf-8"
+    ) as file:
+
         return json.load(file)
 
 
-def count_matching_skills(candidate_skills, required_skills):
-    """
-    Count how many required skills are found in the candidate skills.
-    """
 
-    candidate = {skill.lower() for skill in candidate_skills}
-    required = {skill.lower() for skill in required_skills}
+def load_all_jobs(folder):
 
-    return len(candidate & required)
+    jobs = []
 
+    for file in sorted(os.listdir(folder)):
 
-def degree_matches(candidate_education, required_degrees):
-    """
-    Check if candidate has one of the required degrees.
-    """
+        if file.endswith(".json"):
 
-    required = [d.lower() for d in required_degrees]
+            job_path = os.path.join(
+                folder,
+                file
+            )
 
-    for edu in candidate_education:
-        degree = edu.get("degree", "").lower()
+            jobs.append(
+                load_json(job_path)
+            )
 
-        for req in required:
-            if req in degree:
-                return True
-
-    return False
+    return jobs

@@ -1,10 +1,14 @@
-def extract_work_history(cv_text):
-    return "Work history extracted."
+def extract_work_history(candidate):
+    return candidate.get("experience", [])
 
 
-def check_required_skills(cv_text):
-    return "Required skills checked."
+def extract_skills(candidate):
+    return candidate.get("skills", [])
 
 
-def evaluate_portfolio(cv_text):
-    return "Portfolio evaluated."
+def extract_education(candidate):
+    return candidate.get("education", [])
+
+
+def extract_history(history):
+    return history.get("previous_applications", [])

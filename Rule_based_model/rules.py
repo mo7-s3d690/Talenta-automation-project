@@ -1,61 +1,342 @@
-from config import MIN_EXPERIENCE_GAP
-from utils import count_matching_skills, degree_matches
+SKILL_MAPPING = {
+
+    # =====================
+    # Software Development
+    # =====================
+
+    "react": [
+        "front-end development"
+    ],
+
+    "angular": [
+        "front-end development"
+    ],
+
+    "vue": [
+        "front-end development"
+    ],
 
 
-def evaluate_candidate(candidate, job, history):
+    "node": [
+        "back-end development"
+    ],
 
-    experience = candidate.get("experience_years", 0)
-    skills = candidate.get("skills", [])
-    education = candidate.get("education", [])
+    "node.js": [
+        "back-end development"
+    ],
 
-    required_skills = job["required_skills"]
-    required_degree = job["required_degree"]
+    "django": [
+        "back-end development"
+    ],
 
-    matched_skills = count_matching_skills(
-        skills,
-        required_skills
+    "flask": [
+        "back-end development"
+    ],
+
+
+    "api": [
+        "RESTful API design"
+    ],
+
+    "rest": [
+        "RESTful API design"
+    ],
+
+
+    "sql": [
+        "database design (SQL/NoSQL)"
+    ],
+
+    "mysql": [
+        "database design (SQL/NoSQL)"
+    ],
+
+    "mongodb": [
+        "database design (SQL/NoSQL)"
+    ],
+
+
+    "git": [
+        "version control (Git)"
+    ],
+
+
+    "docker": [
+        "CI/CD & deployment"
+    ],
+
+
+
+    # =====================
+    # Finance
+    # =====================
+
+    "accounting": [
+        "financial reporting & statements"
+    ],
+
+    "financial reporting": [
+        "financial reporting & statements"
+    ],
+
+    "budget": [
+        "budgeting & forecasting"
+    ],
+
+    "forecast": [
+        "budgeting & forecasting"
+    ],
+
+    "erp": [
+        "ERP / finance systems"
+    ],
+
+    "sap": [
+        "ERP / finance systems"
+    ],
+
+    "audit": [
+        "audit coordination"
+    ],
+
+    "tax": [
+        "tax & regulatory compliance"
+    ],
+
+
+
+    # =====================
+    # HR
+    # =====================
+
+    "recruitment": [
+        "recruitment & sourcing"
+    ],
+
+    "sourcing": [
+        "recruitment & sourcing"
+    ],
+
+    "payroll": [
+        "payroll management"
+    ],
+
+    "attendance": [
+        "time & attendance tracking"
+    ],
+
+    "training": [
+        "training needs analysis"
+    ]
+
+}
+
+
+
+def normalize(text):
+
+    return text.lower().strip()
+
+
+
+def extract_candidate_text(candidate):
+
+    data = []
+
+
+    for skill in candidate.get("skills", []):
+
+        data.append(
+            normalize(skill)
+        )
+
+
+    for exp in candidate.get("experience", []):
+
+        for responsibility in exp.get(
+            "responsibilities",
+            []
+        ):
+
+            data.append(
+                normalize(responsibility)
+            )
+
+
+    return data
+
+
+
+
+def calculate_skill_score(candidate, job):
+
+    candidate_text = extract_candidate_text(candidate)
+
+
+    required_skills = (
+        job["job"]
+        ["structured_fields"]
+        ["core_skill_areas"]
     )
 
-    required_skill_count = job["minimum_required_skills"]
-    required_experience = job["minimum_experience"]
 
-    # ---------- Rule 1 ----------
-    if not skills or experience is None:
-        return {
-            "decision": "IDLE",
-            "reason": "Missing important candidate information."
-        }
+    matched = set()
 
-    # ---------- Rule 2 ----------
-    if history.get("current_status") == "INTERVIEW":
-        return {
-            "decision": "IDLE",
-            "reason": "Candidate already in hiring pipeline."
-        }
 
-    # ---------- Rule 3 ----------
-    if experience < required_experience - MIN_EXPERIENCE_GAP:
-        return {
-            "decision": "REJECT",
-            "reason": "Experience below minimum requirement."
-        }
+    for text in candidate_text:
 
-    # ---------- Rule 4 ----------
-    if matched_skills < required_skill_count:
-        return {
-            "decision": "REJECT",
-            "reason": "Insufficient required skills."
-        }
+        for keyword, categories in SKILL_MAPPING.items():
 
-    # ---------- Rule 5 ----------
-    if not degree_matches(education, required_degree):
-        return {
-            "decision": "IDLE",
-            "reason": "Degree requires recruiter review."
-        }
+            if keyword in text:
 
-    # ---------- Rule 6 ----------
+                for category in categories:
+
+                    matched.add(
+                        category.lower()
+                    )
+
+
+    count = 0
+
+
+    for skill in required_skills:
+
+        if skill.lower() in matched:
+
+            count += 1
+
+
+
+    if len(required_skills) == 0:
+
+        return 0
+
+
+    return int(
+        (count / len(required_skills))
+        * 100
+    )
+
+
+
+
+def calculate_experience_score(candidate, job):
+
+    candidate_exp = candidate.get(
+        "experience_years",
+        0
+    )
+
+
+    required_exp = (
+        job["job"]
+        ["structured_fields"]
+        ["min_years_experience"]
+    )
+
+
+    if candidate_exp >= required_exp:
+
+        return 100
+
+
+    return int(
+        (candidate_exp / required_exp)
+        * 100
+    )
+
+
+
+
+def calculate_education_score(candidate, job):
+
+    required_fields = (
+        job["job"]
+        ["structured_fields"]
+        ["required_degree_fields"]
+    )
+
+
+    for education in candidate.get(
+        "education",
+        []
+    ):
+
+        degree = education["degree"].lower()
+
+
+        for field in required_fields:
+
+            if field.lower() in degree:
+
+                return 100
+
+
+    return 0
+
+
+
+
+def evaluate_rules(candidate, job):
+
+
+    experience_score = calculate_experience_score(
+        candidate,
+        job
+    )
+
+
+    education_score = calculate_education_score(
+        candidate,
+        job
+    )
+
+
+    skill_score = calculate_skill_score(
+        candidate,
+        job
+    )
+
+
+
+    final_score = int(
+
+        experience_score * 0.4 +
+
+        education_score * 0.2 +
+
+        skill_score * 0.4
+
+    )
+
+
+
+    if final_score >= 70:
+
+        decision = "ACCEPT"
+
+
+    elif final_score >= 40:
+
+        decision = "IDLE"
+
+
+    else:
+
+        decision = "REJECT"
+
+
+
     return {
-        "decision": "ACCEPT",
-        "reason": "Candidate satisfies all requirements."
+
+        "score": final_score,
+
+        "decision": decision,
+
+        "experience_score": experience_score,
+
+        "education_score": education_score,
+
+        "skill_score": skill_score
+
     }

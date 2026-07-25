@@ -1,36 +1,42 @@
 {
   "id": "cand_07",
-  "name": "Dina Mostafa",
-  "email": "dina.mostafa@email.com",
+  "name": "Mohamed Hassan",
+  "email": "mohamed.hassan@email.com",
   "location": "Cairo, Egypt",
   "education": [
     {
-      "degree": "BA in Business Administration",
+      "degree": "BSc in Computer Science",
       "institution": "Cairo University",
-      "year": 2017
+      "year": 2018
     }
   ],
   "experience_years": 6.0,
   "skills": [
-    "Talent Acquisition",
-    "Full-Cycle Recruitment",
-    "Sourcing & Screening",
-    "Offer Negotiation",
-    "Onboarding Logistics",
-    "Applicant Tracking System (ATS)"
+    "React",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "REST APIs",
+    "Git",
+    "Docker",
+    "CI/CD",
+    "JavaScript",
+    "TypeScript"
   ],
   "experience": [
     {
-      "title": "Senior Talent Acquisition Specialist",
-      "company": "Orbit Telecom",
-      "period": "2019 - Present",
-      "duration_years": 6.0,
+      "title": "Senior Fullstack Developer",
+      "company": "Tech Solutions Egypt",
+      "period": "2020 - Present",
+      "duration_years": 5.0,
       "responsibilities": [
-        "Own full-cycle recruitment: job postings, sourcing, screening, interview coordination, and offer negotiation for technical and commercial roles",
-        "Manage onboarding logistics and documentation for all new hires",
-        "Maintain the applicant tracking system and report on hiring funnel metrics"
+        "Developed scalable web applications using React and Node.js",
+        "Designed REST APIs",
+        "Managed MongoDB databases",
+        "Implemented CI/CD pipelines",
+        "Reviewed pull requests",
+        "Worked in Agile Scrum teams"
       ]
     }
-  ],
-  "notes": "No payroll, labor-law compliance, or training-plan responsibilities in this role or any prior role."
+  ]
 }

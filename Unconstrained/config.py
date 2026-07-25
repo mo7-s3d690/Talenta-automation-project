@@ -1,15 +1,16 @@
 import os
 from dotenv import load_dotenv
-from google import genai
+from langchain_groq import ChatGroq
 
-# Load environment variables
 load_dotenv()
 
-# Read API Key
-api_key = os.getenv("GOOGLE_API_KEY")
+api_key = os.getenv("GROQ_API_KEY")
 
 if not api_key:
-    raise ValueError("GOOGLE_API_KEY not found in .env file")
+    raise ValueError("GROQ_API_KEY not found in .env file")
 
-# Create Gemini Client
-client = genai.Client(api_key=api_key)
+llm = ChatGroq(
+    groq_api_key=api_key,
+    model="llama-3.3-70b-versatile",
+    temperature=0.2
+)

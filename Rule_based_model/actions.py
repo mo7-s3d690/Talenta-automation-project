@@ -1,18 +1,39 @@
-def execute_action(result):
+def print_result(candidate, job, result):
 
-    decision = result["decision"]
-    reason = result["reason"]
+    print("=" * 60)
 
-    if decision == "ACCEPT":
-        print("Candidate Accepted")
-        print("Action: Schedule Interview")
+    print(
+        f"Candidate: {candidate['name']}"
+    )
 
-    elif decision == "REJECT":
-        print("Candidate Rejected")
-        print("Action: Send Rejection Email")
+    print(
+        f"Best Match Job: {job['job']['title']}"
+    )
 
-    else:
-        print("Candidate Needs Human Review")
-        print("Action: Forward to Recruiter")
+    print(
+        f"Match Score: {result['score']}"
+    )
 
-    print(f"Reason: {reason}")
+    print(
+        f"Decision: {result['decision']}"
+    )
+
+
+    print(
+        "Details:"
+    )
+
+    print(
+        f"- Experience Score: {result['experience_score']}"
+    )
+
+    print(
+        f"- Education Score: {result['education_score']}"
+    )
+
+    print(
+        f"- Skills Score: {result['skill_score']}"
+    )
+
+
+    print("=" * 60)

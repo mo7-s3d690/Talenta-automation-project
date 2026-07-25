@@ -1,52 +1,112 @@
 import os
 
-from config import (
-    CANDIDATES_FOLDER,
-    HISTORY_FOLDER,
-    JOB_FILE
+
+from utils import (
+    load_json,
+    load_all_jobs
 )
 
-from utils import load_json
-from rules import evaluate_candidate
-from actions import execute_action
+from rules import evaluate_rules
+
+from actions import print_result
+
+
+
+BASE_DIR = os.path.dirname(
+    os.path.abspath(__file__)
+)
+
+
+PROJECT_ROOT = os.path.dirname(
+    BASE_DIR
+)
+
+
+
+CANDIDATES_FOLDER = os.path.join(
+    PROJECT_ROOT,
+    "test_data",
+    "candidates"
+)
+
+
+JOBS_FOLDER = os.path.join(
+    PROJECT_ROOT,
+    "test_data",
+    "jobs"
+)
+
+
 
 
 def main():
 
-    job = load_json(JOB_FILE)["job"]
+    jobs = load_all_jobs(
+        JOBS_FOLDER
+    )
 
-    for filename in sorted(os.listdir(CANDIDATES_FOLDER)):
 
-        if not filename.endswith(".json"):
+    for file in sorted(
+        os.listdir(CANDIDATES_FOLDER)
+    ):
+
+
+        if not file.endswith(".json"):
+
             continue
 
+
+
         candidate = load_json(
-            os.path.join(CANDIDATES_FOLDER, filename)
+            os.path.join(
+                CANDIDATES_FOLDER,
+                file
+            )
         )
 
-        history_path = os.path.join(
-            HISTORY_FOLDER,
-            f"history_{candidate['id']}.json"
-        )
 
-        if os.path.exists(history_path):
-            history = load_json(history_path)
-        else:
-            history = {}
 
-        print("=" * 60)
-        print(f"Candidate: {candidate['name']}")
+        best_job = None
 
-        result = evaluate_candidate(
+        best_result = None
+
+
+
+        for job in jobs:
+
+
+            result = evaluate_rules(
+                candidate,
+                job
+            )
+
+
+
+            if (
+                best_result is None
+                or
+                result["score"]
+                >
+                best_result["score"]
+
+            ):
+
+                best_result = result
+
+                best_job = job
+
+
+
+
+        print_result(
             candidate,
-            job,
-            history
+            best_job,
+            best_result
         )
 
-        execute_action(result)
 
-        print("=" * 60)
 
 
 if __name__ == "__main__":
+
     main()

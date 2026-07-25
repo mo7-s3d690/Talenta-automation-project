@@ -1,44 +1,36 @@
 {
   "id": "cand_08",
-  "name": "Karim Younes",
-  "email": "karim.younes@email.com",
-  "location": "Cairo, Egypt",
+  "name": "Sara Mostafa",
+  "email": "sara.mostafa@email.com",
+  "location": "Alexandria, Egypt",
   "education": [
     {
-      "degree": "BA in Business Administration",
-      "institution": "October University",
-      "year": 2024
+      "degree": "BSc in Computer Engineering",
+      "institution": "Alexandria University",
+      "year": 2020
     }
   ],
-  "experience_years": 0.83,
+  "experience_years": 4.0,
   "skills": [
-    "Employee Lifecycle Admin",
-    "Legal Regulations Compliance",
-    "Workforce KPIs Monitoring",
-    "Payroll Management Processes",
-    "Variable Payroll Elements",
-    "Time Tracking & Absence Management",
-    "Recruitment Campaigns",
-    "Job Postings",
-    "Onboarding",
-    "Training Needs Engineering"
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+    "Docker",
+    "Redis",
+    "Git"
   ],
   "experience": [
     {
-      "title": "HR Intern / Junior HR Coordinator",
-      "company": "Bright Solutions",
-      "period": "2024 - Present",
-      "duration_years": 0.83,
+      "title": "Backend Developer",
+      "company": "CloudHub",
+      "period": "2021 - Present",
+      "duration_years": 4.0,
       "responsibilities": [
-        "Ensuring administrative organization of employees throughout the employee lifecycle",
-        "Ensuring compliance of administrative files with legal regulations",
-        "Monitoring workforce KPIs and productivity indicators",
-        "Mastering payroll management processes and controlling variable payroll elements",
-        "Monitoring time tracking, absences, leave, and overtime",
-        "Participating in recruitment campaigns and distributing job postings",
-        "Contributing to onboarding of new employees and training-needs engineering"
+        "Develop backend APIs",
+        "Database optimization",
+        "Authentication services",
+        "Deploy Docker containers"
       ]
     }
-  ],
-  "notes": "No employer confirmation of scope, no team size; total work history is under one year."
+  ]
 }
