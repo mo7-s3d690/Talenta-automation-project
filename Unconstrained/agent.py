@@ -1,6 +1,6 @@
 import json
 import os
-
+import time
 from config import llm
 from prompts import REACT_PROMPT
 
@@ -73,10 +73,18 @@ REJECT
 or
 IDLE
 """
+    
 
+    start = time.time()
     response = llm.invoke(prompt)
 
     return response.content
+    end = time.time()
+
+    print(
+        "Latency:",
+        end-start
+    )
 
 
 # ==========================

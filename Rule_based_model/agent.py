@@ -1,6 +1,6 @@
 import os
 
-
+import time
 from utils import (
     load_json,
     load_all_jobs
@@ -40,7 +40,8 @@ JOBS_FOLDER = os.path.join(
 
 
 def main():
-
+    
+    start = time.time()
     jobs = load_all_jobs(
         JOBS_FOLDER
     )
@@ -103,6 +104,13 @@ def main():
             best_job,
             best_result
         )
+    end = time.time()
+
+    print(
+        "Latency:",
+        end-start,
+        "seconds"
+    )
 
 
 
