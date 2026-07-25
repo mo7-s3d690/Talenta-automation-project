@@ -1,18 +1,51 @@
 {
-  "id": "job_fullstack_dev",
-  "title": "Fullstack Developer",
-  "min_years_experience": 3,
-  "required_degree_fields": [
-    "Computer Science",
-    "Software Engineering",
-    "Information Technology"
-  ],
-  "core_skill_areas": [
-    "JavaScript",
-    "React",
-    "Node.js",
-    "Python",
-    "SQL",
-    "API design"
-  ]
+  "job": {
+    "title": "Fullstack Developer",
+    "arabic_title": "مطور برمجيات متكامل (Full Stack)",
+    "company": {
+      "name": "Talenta Partners Group",
+      "description": "Specializes in recruitment through direct search and HR consultants. Supports clients in acquiring top-level talent and matching candidates to professional projects."
+    },
+    "summary": "Recruiting a Fullstack Developer for one of our client companies.",
+    "responsibilities": [
+      "Design, develop, and maintain web applications across front-end and back-end layers",
+      "Build and consume RESTful APIs and integrate third-party services",
+      "Design and optimize relational and/or NoSQL database schemas",
+      "Write clean, maintainable, and well-tested code",
+      "Participate in code reviews and uphold engineering best practices",
+      "Collaborate with product managers and designers to translate requirements into technical solutions",
+      "Debug and resolve issues across the full application stack",
+      "Set up and maintain CI/CD pipelines and deployment processes",
+      "Monitor and optimize application performance and scalability",
+      "Contribute to architecture and technical design decisions",
+      "Maintain technical documentation for developed features",
+      "Work within agile/scrum development cycles",
+      "Ensure application security best practices are followed"
+    ],
+    "requirements": {
+      "education": "Bachelor's degree or higher in Computer Science / Software Engineering",
+      "experience_min_years": 3,
+      "experience_type": "Proven experience as a fullstack or web application developer"
+    },
+    "structured_fields": {
+      "min_years_experience": 3,
+      "required_degree_fields": [
+        "computer science",
+        "software engineering",
+        "computer engineering"
+      ],
+      "core_skill_areas": [
+        "front-end development",
+        "back-end development",
+        "RESTful API design",
+        "database design (SQL/NoSQL)",
+        "version control (Git)",
+        "testing & debugging",
+        "CI/CD & deployment",
+        "performance optimization",
+        "software architecture",
+        "agile/scrum practices"
+      ]
+    }
+  }
 }

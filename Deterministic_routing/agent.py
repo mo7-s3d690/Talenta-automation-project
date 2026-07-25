@@ -5,7 +5,7 @@ from actions import execute_action
 
 CANDIDATES_FOLDER = "../test_data/candidates"
 HISTORY_FOLDER = "../test_data/history"
-JOB_FILE = "../test_data/job.json"
+JOB_FILE = "../test_data/jobs/job_hr_manager.json"
 
 def load_json(file_path):
     """

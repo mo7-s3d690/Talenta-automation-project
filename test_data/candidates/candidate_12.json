@@ -1,23 +1,51 @@
 {
-  "id": "candidate_12",
-  "name": "Michael Thompson",
-  "experience_years": 2,
+  "id": "cand_12",
+  "name": "Salma Hassanein",
+  "email": "salma.hassanein@email.com",
+  "location": "Cairo, Egypt",
   "education": [
     {
-      "degree": "Information Technology"
+      "degree": "BA in Human Resources Management",
+      "institution": "Helwan University",
+      "year": 2015
     }
   ],
+  "experience_years": 6.5,
   "skills": [
-    "JavaScript",
-    "React"
+    "Employee Lifecycle Management",
+    "Labor Law Compliance",
+    "Payroll Processing",
+    "HRIS",
+    "Attendance & Leave Tracking",
+    "Recruitment",
+    "Onboarding",
+    "Training Needs Assessment",
+    "Workforce Reporting"
   ],
   "experience": [
     {
-      "title": "Junior Developer",
+      "title": "HR Manager",
+      "company": "Pyramid Logistics",
+      "period": "2021 - Present",
+      "duration_years": 3.5,
       "responsibilities": [
-        "Frontend development"
+        "Manage employee lifecycle administration for 180 employees",
+        "Ensure legal and regulatory compliance of HR files",
+        "Process monthly payroll and variable elements",
+        "Monitor attendance, leave, and overtime",
+        "Run recruitment campaigns and coordinate onboarding",
+        "Identify training needs and track training plan execution",
+        "Report monthly workforce KPIs to management"
+      ]
+    },
+    {
+      "title": "HR Generalist",
+      "company": "Pyramid Logistics",
+      "period": "2018 - 2021",
+      "duration_years": 3.0,
+      "responsibilities": [
+        "Supported payroll, recruitment, and employee records management"
       ]
     }
-  ],
-  "applied_job": "job_fullstack_dev"
+  ]
 }

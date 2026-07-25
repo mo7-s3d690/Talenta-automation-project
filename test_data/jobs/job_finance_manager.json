@@ -1,17 +1,52 @@
 {
-  "id": "job_finance_manager",
-  "title": "Finance Manager",
-  "min_years_experience": 6,
-  "required_degree_fields": [
-    "Finance",
-    "Accounting",
-    "Business Administration"
-  ],
-  "core_skill_areas": [
-    "financial reporting",
-    "budgeting",
-    "forecasting",
-    "cost control",
-    "IFRS"
-  ]
+  "job": {
+    "title": "Finance Manager",
+    "arabic_title": "مدير مالي",
+    "company": {
+      "name": "Talenta Partners Group",
+      "description": "Specializes in recruitment through direct search and HR consultants. Supports clients in acquiring top-level talent and matching candidates to professional projects."
+    },
+    "summary": "Recruiting a Finance Manager for one of our client companies.",
+    "responsibilities": [
+      "Oversee preparation of monthly, quarterly, and annual financial statements",
+      "Manage budgeting, forecasting, and variance analysis processes",
+      "Monitor cash flow and working capital to ensure liquidity",
+      "Ensure compliance with accounting standards, tax regulations, and statutory reporting requirements",
+      "Coordinate with external auditors and manage the annual audit cycle",
+      "Supervise accounts payable, accounts receivable, and general ledger functions",
+      "Control and analyze costs across departments to support profitability",
+      "Oversee the finance team's day-to-day operations and set performance objectives",
+      "Prepare financial reports and dashboards for senior management",
+      "Manage relationships with banks and financial institutions",
+      "Support month-end and year-end closing processes",
+      "Identify financial risks and propose mitigation strategies",
+      "Ensure finance and ERP systems accurately reflect company operations",
+      "Collaborate with department heads on budget planning and cost control"
+    ],
+    "requirements": {
+      "education": "Bachelor's degree or higher in Finance / Accounting / Business Administration",
+      "experience_min_years": 5,
+      "experience_type": "Proven experience in a finance management or senior accounting role"
+    },
+    "structured_fields": {
+      "min_years_experience": 5,
+      "required_degree_fields": [
+        "finance",
+        "accounting",
+        "business administration"
+      ],
+      "core_skill_areas": [
+        "financial reporting & statements",
+        "budgeting & forecasting",
+        "cash flow & working capital management",
+        "tax & regulatory compliance",
+        "audit coordination",
+        "cost control & analysis",
+        "accounts payable/receivable oversight",
+        "ERP / finance systems",
+        "team leadership",
+        "risk management"
+      ]
+    }
+  }
 }

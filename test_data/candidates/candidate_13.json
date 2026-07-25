@@ -1,27 +1,43 @@
 {
-  "id": "candidate_13",
-  "name": "Olivia Bennett",
-  "experience_years": 8,
+  "id": "cand_13",
+  "name": "Ahmed Zaki",
+  "email": "ahmed.zaki@email.com",
+  "location": "Tanta, Egypt",
   "education": [
     {
-      "degree": "Finance"
+      "degree": "BSc in Mechanical Engineering",
+      "institution": "Tanta University",
+      "year": 2012
     }
   ],
+  "experience_years": 12.0,
   "skills": [
-    "financial reporting",
-    "budgeting",
-    "forecasting",
-    "cost control",
-    "IFRS"
+    "Production Planning",
+    "Quality Control",
+    "Lean Manufacturing",
+    "Team Supervision",
+    "Maintenance Scheduling"
   ],
   "experience": [
     {
-      "title": "Finance Manager",
+      "title": "Production Manager",
+      "company": "Nile Steel Industries",
+      "period": "2015 - Present",
+      "duration_years": 9.0,
       "responsibilities": [
-        "Managed budgets",
-        "Prepared financial reports"
+        "Supervise production line teams and shift schedules",
+        "Manage maintenance planning and quality control processes",
+        "Oversee performance reviews for line supervisors"
+      ]
+    },
+    {
+      "title": "Production Engineer",
+      "company": "Nile Steel Industries",
+      "period": "2012 - 2015",
+      "duration_years": 3.0,
+      "responsibilities": [
+        "Supported production planning and quality inspections"
       ]
     }
-  ],
-  "applied_job": "job_finance_manager"
+  ]
 }

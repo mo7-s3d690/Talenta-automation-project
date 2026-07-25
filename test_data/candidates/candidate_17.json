@@ -1,0 +1,58 @@
+{
+  "id": "cand_17",
+  "name": "Hossam El-Din Nabil",
+  "email": "hossam.nabil@email.com",
+  "location": "Cairo, Egypt",
+  "education": [
+    {
+      "degree": "BSc in Accounting",
+      "institution": "Cairo University",
+      "year": 2011
+    },
+    {
+      "degree": "CMA Certification",
+      "institution": "Institute of Management Accountants",
+      "year": 2016
+    }
+  ],
+  "experience_years": 12.0,
+  "skills": [
+    "Financial Reporting & Statements",
+    "Budgeting & Forecasting",
+    "Cash Flow Management",
+    "Tax & Regulatory Compliance",
+    "Audit Coordination",
+    "Cost Control & Analysis",
+    "ERP Systems (SAP)",
+    "Team Leadership",
+    "Risk Management"
+  ],
+  "experience": [
+    {
+      "title": "Finance Manager",
+      "company": "Orascom Building Materials",
+      "period": "2017 - Present",
+      "duration_years": 9.0,
+      "responsibilities": [
+        "Oversee preparation of monthly, quarterly, and annual financial statements",
+        "Manage budgeting, forecasting, and variance analysis for a 200M EGP annual budget",
+        "Monitor cash flow and working capital across three business units",
+        "Ensure compliance with Egyptian accounting standards and tax regulations",
+        "Coordinate annual external audits with Big Four auditors",
+        "Supervise accounts payable, receivable, and general ledger teams of 12",
+        "Manage banking relationships and credit facilities",
+        "Lead month-end and year-end closing processes",
+        "Present financial dashboards to the executive committee"
+      ]
+    },
+    {
+      "title": "Senior Financial Analyst",
+      "company": "Orascom Building Materials",
+      "period": "2011 - 2017",
+      "duration_years": 6.0,
+      "responsibilities": [
+        "Prepared budget variance reports and supported audit cycles"
+      ]
+    }
+  ]
+}

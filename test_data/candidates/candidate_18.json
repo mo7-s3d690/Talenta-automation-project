@@ -1,0 +1,31 @@
+{
+  "id": "cand_18",
+  "name": "Mai Abdel-Aziz",
+  "email": "mai.abdelaziz@email.com",
+  "location": "Tanta, Egypt",
+  "education": [
+    {
+      "degree": "BSc in Commerce",
+      "institution": "Tanta University",
+      "year": 2023
+    }
+  ],
+  "experience_years": 1.0,
+  "skills": [
+    "MS Excel",
+    "Data Entry",
+    "Invoice Processing"
+  ],
+  "experience": [
+    {
+      "title": "Junior Accountant",
+      "company": "Delta Foods Co.",
+      "period": "2024 - Present",
+      "duration_years": 1.0,
+      "responsibilities": [
+        "Processed vendor invoices and updated the accounting ledger",
+        "Assisted with filing monthly expense reports"
+      ]
+    }
+  ]
+}

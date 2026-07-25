@@ -1,0 +1,33 @@
+{
+  "id": "cand_16",
+  "name": "Tarek Sami",
+  "email": "tarek.sami@email.com",
+  "location": "Ismailia, Egypt",
+  "education": [
+    {
+      "degree": "BSc in Accounting",
+      "institution": "Suez Canal University",
+      "year": 2011
+    }
+  ],
+  "experience_years": 13.0,
+  "skills": [
+    "Financial Auditing",
+    "Bookkeeping",
+    "Tax Filing",
+    "Inventory Reconciliation"
+  ],
+  "experience": [
+    {
+      "title": "Chief Accountant",
+      "company": "Canal Trading Co.",
+      "period": "2013 - Present",
+      "duration_years": 13.0,
+      "responsibilities": [
+        "Manage company bookkeeping and financial audits",
+        "Prepare tax filings and reconcile inventory accounts",
+        "Supervise junior accounting staff"
+      ]
+    }
+  ]
+}

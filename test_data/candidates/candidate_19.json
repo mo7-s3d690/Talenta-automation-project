@@ -1,0 +1,43 @@
+{
+  "id": "cand_19",
+  "name": "Sherif Kamal",
+  "email": "sherif.kamal@email.com",
+  "location": "Giza, Egypt",
+  "education": [
+    {
+      "degree": "BSc in Accounting",
+      "institution": "Ain Shams University",
+      "year": 2013
+    }
+  ],
+  "experience_years": 11.0,
+  "skills": [
+    "External Audit",
+    "Financial Statement Audit",
+    "Internal Controls Testing",
+    "IFRS Compliance Review",
+    "Audit Team Supervision"
+  ],
+  "experience": [
+    {
+      "title": "Audit Senior Manager",
+      "company": "KPMG Egypt",
+      "period": "2016 - Present",
+      "duration_years": 10.0,
+      "responsibilities": [
+        "Lead external audit engagements for manufacturing and retail clients",
+        "Review internal controls and IFRS compliance",
+        "Supervise teams of junior auditors during engagements"
+      ]
+    },
+    {
+      "title": "Audit Associate",
+      "company": "KPMG Egypt",
+      "period": "2013 - 2016",
+      "duration_years": 3.0,
+      "responsibilities": [
+        "Performed substantive testing on client financial statements"
+      ]
+    }
+  ]
+}

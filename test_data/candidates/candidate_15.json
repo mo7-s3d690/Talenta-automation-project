@@ -1,0 +1,54 @@
+{
+  "id": "cand_15",
+  "name": "Mona Aboul-Ela",
+  "email": "mona.aboulela@email.com",
+  "location": "Cairo, Egypt",
+  "education": [
+    {
+      "degree": "MBA, Human Resources Concentration",
+      "institution": "American University in Cairo",
+      "year": 2014
+    }
+  ],
+  "experience_years": 10.0,
+  "skills": [
+    "Employee Lifecycle Management",
+    "Egyptian Labor Law",
+    "Payroll Management",
+    "Variable Payroll Elements",
+    "HRIS Administration",
+    "Workforce KPI Reporting",
+    "Recruitment Campaigns",
+    "Onboarding",
+    "Training Needs Engineering",
+    "Training Plan Development & Evaluation"
+  ],
+  "experience": [
+    {
+      "title": "HR Manager",
+      "company": "Cairo Pharmaceuticals",
+      "period": "2017 - Present",
+      "duration_years": 7.0,
+      "responsibilities": [
+        "Direct full employee lifecycle administration for 400+ employees",
+        "Ensure compliance of all administrative files with legal and regulatory requirements",
+        "Own payroll management process and control variable payroll elements",
+        "Monitor time tracking, absences, leave, and overtime across departments",
+        "Ensure reliability of workforce and payroll data",
+        "Lead recruitment campaigns and manage sourcing, screening, interview coordination",
+        "Drive onboarding programs for new employees",
+        "Lead training-needs engineering with department managers",
+        "Develop and evaluate the annual training plan"
+      ]
+    },
+    {
+      "title": "HR Business Partner",
+      "company": "Cairo Pharmaceuticals",
+      "period": "2014 - 2017",
+      "duration_years": 3.0,
+      "responsibilities": [
+        "Partnered with department managers on workforce planning and payroll accuracy"
+      ]
+    }
+  ]
+}

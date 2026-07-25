@@ -1,0 +1,57 @@
+{
+  "id": "cand_20",
+  "name": "Rania Adel",
+  "email": "rania.adel@email.com",
+  "location": "Cairo, Egypt",
+  "education": [
+    {
+      "degree": "BSc in Finance",
+      "institution": "Ain Shams University",
+      "year": 2016
+    }
+  ],
+  "experience_years": 6.0,
+  "skills": [
+    "Financial Reporting",
+    "Budgeting & Forecasting",
+    "Cash Flow Management",
+    "Tax Compliance",
+    "Cost Control",
+    "ERP Systems (Oracle)",
+    "Team Leadership"
+  ],
+  "experience": [
+    {
+      "title": "Finance Manager",
+      "company": "Juhayna Food Industries",
+      "period": "2022 - Present",
+      "duration_years": 2.5,
+      "responsibilities": [
+        "Prepare monthly and annual financial statements",
+        "Manage budgeting and forecasting cycles for the regional business unit",
+        "Monitor cash flow and coordinate with banks on financing needs",
+        "Ensure tax and regulatory compliance across filings",
+        "Supervise a team of 5 accountants",
+        "Lead month-end close process"
+      ]
+    },
+    {
+      "title": "Senior Financial Accountant",
+      "company": "Juhayna Food Industries",
+      "period": "2018 - 2022",
+      "duration_years": 4.0,
+      "responsibilities": [
+        "Handled general ledger reconciliation and cost analysis"
+      ]
+    },
+    {
+      "title": "Financial Accountant",
+      "company": "Beltone Financial",
+      "period": "2016 - 2018",
+      "duration_years": 2.0,
+      "responsibilities": [
+        "Supported accounts payable and receivable functions"
+      ]
+    }
+  ]
+}

@@ -1,23 +1,44 @@
 {
-  "id": "candidate_14",
-  "name": "Daniel Brooks",
-  "experience_years": 3,
+  "id": "cand_14",
+  "name": "Dina Mostafa",
+  "email": "dina.mostafa@email.com",
+  "location": "Alexandria, Egypt",
   "education": [
     {
-      "degree": "Accounting"
+      "degree": "BA in Human Resources Management",
+      "institution": "Alexandria University",
+      "year": 2019
     }
   ],
+  "experience_years": 4.5,
   "skills": [
-    "financial reporting",
-    "budgeting"
+    "Employee Records Management",
+    "Payroll Support",
+    "Egyptian Labor Law Basics",
+    "Recruitment Coordination",
+    "Onboarding",
+    "Attendance Tracking"
   ],
   "experience": [
     {
-      "title": "Financial Analyst",
+      "title": "HR Generalist",
+      "company": "Alex Pharma Group",
+      "period": "2021 - Present",
+      "duration_years": 3.5,
       "responsibilities": [
-        "Supported budgeting process"
+        "Handle employee lifecycle documentation and contract amendments",
+        "Support payroll data collection and attendance tracking",
+        "Coordinate recruitment logistics and onboarding sessions"
+      ]
+    },
+    {
+      "title": "HR Coordinator",
+      "company": "Alex Pharma Group",
+      "period": "2020 - 2021",
+      "duration_years": 1.0,
+      "responsibilities": [
+        "Maintained employee files and assisted with interview scheduling"
       ]
     }
-  ],
-  "applied_job": "job_finance_manager"
+  ]
 }

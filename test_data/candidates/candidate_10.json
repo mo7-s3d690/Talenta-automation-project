@@ -1,23 +1,33 @@
 {
-  "id": "candidate_10",
-  "name": "James Carter",
-  "experience_years": 4,
+  "id": "cand_10",
+  "name": "Nourhan Fathy",
+  "email": "nourhan.fathy@email.com",
+  "location": "Mansoura, Egypt",
   "education": [
     {
-      "degree": "Business Administration"
+      "degree": "BA in Psychology",
+      "institution": "Mansoura University",
+      "year": 2023
     }
   ],
+  "experience_years": 1.5,
   "skills": [
-    "recruitment",
-    "onboarding"
+    "Data Entry",
+    "Customer Service",
+    "MS Excel",
+    "Basic Recruitment Support"
   ],
   "experience": [
     {
-      "title": "HR Specialist",
+      "title": "HR Assistant",
+      "company": "Mansoura Retail Co.",
+      "period": "2024 - Present",
+      "duration_years": 1.5,
       "responsibilities": [
-        "Handled recruitment"
+        "Filed employee documents and updated basic records",
+        "Assisted with scheduling interviews",
+        "Handled front-desk inquiries from employees"
       ]
     }
-  ],
-  "applied_job": "job_hr_manager"
+  ]
 }

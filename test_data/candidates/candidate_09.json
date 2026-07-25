@@ -1,0 +1,56 @@
+{
+  "id": "cand_09",
+  "name": "Youssef Abdel-Rahman",
+  "email": "youssef.abdelrahman@email.com",
+  "location": "Alexandria, Egypt",
+  "education": [
+    {
+      "degree": "BA in Human Resources Management",
+      "institution": "Alexandria University",
+      "year": 2013
+    }
+  ],
+  "experience_years": 11.5,
+  "skills": [
+    "Employee Lifecycle Management",
+    "Egyptian Labor Law",
+    "Social Insurance Compliance",
+    "Payroll Management",
+    "Variable Payroll Elements",
+    "Time & Attendance Systems",
+    "Workforce KPIs",
+    "Recruitment & Sourcing",
+    "Onboarding",
+    "Training Needs Analysis",
+    "Training Plan Development"
+  ],
+  "experience": [
+    {
+      "title": "HR Manager",
+      "company": "Suez Manufacturing Co.",
+      "period": "2018 - Present",
+      "duration_years": 8.0,
+      "responsibilities": [
+        "Manage full employee lifecycle for 350+ employees across 3 sites",
+        "Ensure administrative and legal compliance of all personnel files",
+        "Own end-to-end payroll management including variable elements and coordination with finance",
+        "Monitor time tracking, absences, leave, and overtime through HRIS",
+        "Lead recruitment campaigns, write job postings, manage sourcing and interview coordination",
+        "Oversee onboarding process for all new hires",
+        "Identify training needs with department managers and build annual training plan",
+        "Track and evaluate training program effectiveness",
+        "Report workforce and payroll KPIs to executive committee monthly"
+      ]
+    },
+    {
+      "title": "Senior HR Generalist",
+      "company": "Delta Textiles",
+      "period": "2013 - 2018",
+      "duration_years": 5.0,
+      "responsibilities": [
+        "Managed payroll processing and employee records for 150 employees",
+        "Coordinated recruitment and onboarding activities"
+      ]
+    }
+  ]
+}
