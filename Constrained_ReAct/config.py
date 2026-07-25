@@ -1,16 +1,20 @@
 import os
 from dotenv import load_dotenv
-from google import genai
+from langchain_groq import ChatGroq
 
-load_dotenv()
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"))
 
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-if not GOOGLE_API_KEY:
-    raise ValueError("GOOGLE_API_KEY not found in .env file")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+if not GROQ_API_KEY:
+    raise ValueError("GROQ_API_KEY not found in .env file")
 
-client = genai.Client(api_key=GOOGLE_API_KEY)
+llm = ChatGroq(
+    groq_api_key=GROQ_API_KEY,
+    model="llama-3.3-70b-versatile",
+    temperature=0.1,
+)
 
-MODEL_NAME = "gemini-3.5-flash"
+MODEL_NAME = "llama-3.3-70b-versatile"
 MAX_STEPS = 6
 ALLOWED_TOOLS = ["check_qualifications", "check_skill_coverage", "check_application_history"]
 MAX_VALIDATION_RETRIES = 3
