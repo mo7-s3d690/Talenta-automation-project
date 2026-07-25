@@ -77,6 +77,7 @@ IDLE
 
     start = time.time()
     response = llm.invoke(prompt)
+    print(response.response_metadata)
 
     return response.content
     end = time.time()
